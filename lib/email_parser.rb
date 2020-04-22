@@ -7,7 +7,7 @@ class EmailAddressParser
   def initialize(emails)
     @emails = emails
   end
-  def self.parse
+  def parse
     parsed_emails = @emails.split(/[, ]/)
     unique_emails = [];
     parsed_emails.each {|email| unique_emails << email if !unique_emails.include?(email)}
