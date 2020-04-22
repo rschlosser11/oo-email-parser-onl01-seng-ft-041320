@@ -11,6 +11,7 @@ class EmailAddressParser
     parsed_emails = @emails.split(/[, ]/)
     unique_emails = [];
     parsed_emails.each {|email| unique_emails << email if !unique_emails.include?(email)}
+    unique_emails.each {|email| unique_emails.delete(email) if email == ""}
     unique_emails
   end
 end
